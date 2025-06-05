@@ -238,62 +238,9 @@
                 </div>
               </xsl:if>
 
-              <xsl:choose>
-                <xsl:when test="starts-with(enclosure/@type, 'audio')">
-                  <audio controls="true" preload="none">
-                    <xsl:attribute name="src">
-                      <xsl:value-of select="enclosure/@url"/>
-                    </xsl:attribute>
-                  </audio>
-                </xsl:when>
-                <xsl:when test="starts-with(enclosure/@type, 'text')">
-                  <a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="enclosure/@url"/>
-                    </xsl:attribute>
-                    View
-                    <span class="icon-arrow-right"></span>
-                  </a>
-                </xsl:when>
-                <xsl:otherwise>
-                  <a>
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="enclosure/@url"/>
-                    </xsl:attribute>
-                    Download
-                    <span class="icon-arrow-right"></span>
-                  </a>
-                </xsl:otherwise>
-              </xsl:choose>
             </div>
           </xsl:for-each>
 
-          <div class="pagination-div">
-            <xsl:for-each select="/rss/channel/link[@rel]">
-              <xsl:if test="@rel='prev'">
-              <div class="view-pagination-link">
-                <a>
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="@href"/>
-                  </xsl:attribute>
-                  <span class="icon-arrow-left"></span> Prev
-                </a>
-              </div>
-              </xsl:if>
-            </xsl:for-each>
-            <xsl:for-each select="/rss/channel/link[@rel]">
-              <xsl:if test="@rel='next'">
-              <div class="view-pagination-link">
-                <a>
-                  <xsl:attribute name="href">
-                    <xsl:value-of select="@href"/>
-                  </xsl:attribute>
-                  Next <span class="icon-arrow-right"></span>
-                </a>
-              </div>
-              </xsl:if>
-            </xsl:for-each>
-          </div>
         </div>
       </body>
     </html>

@@ -7,6 +7,8 @@ export async function onRequestGet({request, env}) {
     queryKwargs: {
       status: STATUSES.PUBLISHED,
     },
+    // show only latest 7 posts in RSS
+    limit: 7
   });
   return await rssResponseBuilder.getResponse({
     buildXmlFunc: (jsonData) => {
