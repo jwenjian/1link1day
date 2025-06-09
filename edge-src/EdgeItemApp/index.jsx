@@ -11,7 +11,7 @@ export default class EdgeItemApp extends React.Component {
       <html lang={jsonData.language || 'en'}>
       <HtmlHeader
         title={item.title}
-        description={htmlMetaDescription(item.content_text, false)},
+        description={htmlMetaDescription(item.content_text, false)}
         keywords={keywords}
         webpackJsList={[]}
         webpackCssList={[]}
