@@ -6,7 +6,7 @@ export default class EdgeItemApp extends React.Component {
   render() {
     const {item, theme, jsonData, canonicalUrl} = this.props;
     const {html} = theme.getWebItem(item);
-    const keywords = jsonData.seo_keywords ? jsonData.seo_keywords : ""
+    const keywords = jsonData.seo ? jsonData.seo.keywords : ""
     return (
       <html lang={jsonData.language || 'en'}>
       <HtmlHeader
