@@ -7,8 +7,6 @@ export default class EdgeItemApp extends React.Component {
     const {item, theme, jsonData, canonicalUrl} = this.props;
     const {html} = theme.getWebItem(item);
     const keywords = jsonData.seo_keywords ? jsonData.seo_keywords : ""
-    const jsonDataStr = JSON.stringify(jsoData);
-    const itemStr = JSON.stringify(item);
     return (
       <html lang={jsonData.language || 'en'}>
       <HtmlHeader
@@ -32,7 +30,6 @@ export default class EdgeItemApp extends React.Component {
         }}
       />
       <body>
-        <div style="display: none;">{{jsonDataStr}}======{{itemStr}}</div>
         <div dangerouslySetInnerHTML={{__html: html}} />
       </body>
       </html>
