@@ -19,6 +19,7 @@ export default class HtmlHeader extends React.Component {
       webpackCssList,
       favicon,
       canonicalUrl,
+      keywords
     } = this.props;
     return (
       <head>
@@ -27,6 +28,7 @@ export default class HtmlHeader extends React.Component {
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         {description && <meta name="description" content={description}/>}
+        {keywords && <meta name="keywords" content={keywords}/>}
         {webpackJsList && webpackJsList.length > 0 && webpackJsList.map((js) => {
           const realUrl = this.getWebpackRealUrl(js);
           return (realUrl ? <script key={js} type="text/javascript" src={realUrl} defer/> : '');
