@@ -44,9 +44,9 @@ export async function onRequestPost({ request, data, env }) {
 
   const keywords = await tryGenerateKeyWords(itemJson.description, env);
   if (keywords) {
-    itemJson.seo.keywords = keywords
+    itemJson.seo_keywords = keywords
   }
-  
+
   const { feedCrud } = data;
   const itemId = await feedCrud.upsertItem(itemJson);
 
