@@ -1,5 +1,5 @@
 import {XMLBuilder} from "fast-xml-parser";
-import {PUBLIC_URLS, secondsToHHMMSS} from "../../common-src/StringUtils";
+import {PUBLIC_URLS, secondsToHHMMSS, htmlToPlainText} from "../../common-src/StringUtils";
 import {msToUtcString} from "../../common-src/TimeUtils";
 import {OUR_BRAND} from "../../common-src/Constants";
 
@@ -21,7 +21,7 @@ export default class FeedPublicRssBuilder {
      };
      if (item['content_html']) {
        itemJson['description'] = {
-         '@cdata': item['content_html'],
+         '@cdata': htmlToPlainText(item['content_html']).substring(0,150) + "...",
        };
      }
 
