@@ -1,5 +1,7 @@
 compatibility_date = "2025-03-14"
 
+pages_build_output_dir = "build"
+
 [limits]
 cpu_ms = 300_000
 
@@ -9,8 +11,6 @@ database_name = "FEED_DB"
 database_id = "id_placeholder"
 
 [env.production]
-[limits]
-cpu_ms = 300_000
 
 [env.preview]
 
