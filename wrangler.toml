@@ -1,10 +1,17 @@
 compatibility_date = "2025-03-14"
 
+[limits]
+cpu_ms = 300_000
+
 [[ env.development.d1_databases ]]
 binding = "FEED_DB"
 database_name = "FEED_DB"
 database_id = "id_placeholder"
 
 [env.production]
+[limits]
+cpu_ms = 300_000
 
 [env.preview]
+
+
