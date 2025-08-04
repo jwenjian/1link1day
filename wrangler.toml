@@ -7,7 +7,7 @@ name = "1link1day"
 [limits]
 cpu_ms = 300_000
 
-[[ env.production.d1_databases ]]
+[[ env.development.d1_databases ]]
 binding = "FEED_DB"
 database_name = "FEED_DB"
 database_id = "id_placeholder"
